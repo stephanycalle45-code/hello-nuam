@@ -1,0 +1,9 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // PERMITE LECTURA Y ESCRITURA PARA EL MODO DE PRUEBA
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
